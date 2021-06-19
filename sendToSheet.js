@@ -12,7 +12,7 @@ const usersToSheetFormat = (users) => {
 }
 
 const sendData = async (users) => {
-  const sheetId = "1kmI3-aHrBLesqoYaCHHSGgXWV-pdHs35nYxvob1o_sM";
+  const sheetId = process.env.SHEET_ID;
   const sheet = new GoogleSpreadsheet(sheetId);
   
   await promisify(sheet.useServiceAccountAuth)(credentials);  
